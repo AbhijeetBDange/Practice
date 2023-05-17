@@ -1,0 +1,38 @@
+1. Write a Python program that iterate over elements repeating each as many times as
+its count.
+
+# Creating a list
+my_list = [1, 2, 3, 4, 5, 2, 3, 4, 4]
+
+# Iterating over the elements and repeating them
+for element in my_list:
+    count = my_list.count(element)
+    for _ in range(count):
+        print(element)
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2. Write a Python program to find the most common elements and their counts of a
+specified text
+
+
+from collections import Counter
+
+def find_most_common(text):
+    words = text.split()
+
+    word_counts = Counter(words)
+
+    most_common = word_counts.most_common()
+
+    return most_common
+
+
+input_text = "apple orange banana apple orange apple"
+most_common_elements = find_most_common(input_text)
+
+for element, count in most_common_elements:
+    print(f"{element}: {count}")
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
