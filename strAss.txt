@@ -1,0 +1,129 @@
+16. Write a Python function to insert a string in the middle of a string.
+Sample function and result :
+insert_sting_middle('[[]]<<>>', 'Python') -> [[Python]]
+insert_sting_middle('{{}}', 'PHP') -> {{PHP}}
+
+
+
+def insert_string_middle(original_str, insert_str):
+    mid_index = len(original_str) // 2
+    return original_str[:mid_index] + insert_str + original_str[mid_index:]
+
+print(insert_string_middle('[[]]<<>>', 'Python'))
+print(insert_string_middle('{{}}', 'PHP'))
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+17. Write a Python function to get a string made of 4 copies of the last two characters
+of a specified string (length must be at least 2).
+Sample function and result :
+insert_end('Python') -> onononon
+insert_end('Exercises') -> eseseses
+
+
+def get_last_two_chars(string):
+    if len(string) >= 2:
+        last_two_chars = string[-2:]
+        return last_two_chars * 4
+    else:
+        return "Length of the string must be at least 2."
+
+
+print(get_last_two_chars("Hello"))
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+18. Write a Python function to get a string made of its first three characters of a
+specified string. If the length of the string is less than 3 then return the original string.
+Sample function and result :
+first_three('ipy') -> ipy
+first_three('python') -> pyt
+
+
+def get_first_three_chars(string):
+    if len(string) >= 3:
+        return string[:3]
+    else:
+        return string
+
+
+print(get_first_three_chars("Python"))
+print(get_first_three_chars("Hi"))
+print(get_first_three_chars("A"))
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+19. Write a Python program to get the last part of a string before a specified character.
+https://www.w3resource.com/python-exercises
+https://www.w3resource.com/python
+
+
+def get_last_part_before_character(string, character):
+    parts = string.rsplit(character, 1)
+    if len(parts) > 1:
+        return parts[0]
+    else:
+        return string
+
+
+print(get_last_part_before_character("Hello World", " "))
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------20. Write a Python function to reverses a string if it's length is a multiple of 4.
+
+
+
+def reverse_string_if_multiple_of_four(string):
+    if len(string) % 4 == 0:
+        return string[::-1] 
+    else:
+        return string
+
+print(reverse_string_if_multiple_of_four("Python"))
+print(reverse_string_if_multiple_of_four("Hello"))
+print(reverse_string_if_multiple_of_four("abcd"))
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+21. Write a Python function to convert a given string to all uppercase if it contains at
+least 2 uppercase characters in the first 4 characters.
+
+
+def convert_to_uppercase(string):
+    uppercase_count = 0
+    for char in string[:4]:
+        if char.isupper():
+            uppercase_count += 1
+
+    if uppercase_count >= 2:
+        return string.upper()
+    else:
+        return string
+
+
+print(convert_to_uppercase("Hello World"))
+print(convert_to_uppercase("HeLlo World"))
+print(convert_to_uppercase("HELLO"))
+print(convert_to_uppercase("hello"))
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+22.Write a Python program to sort a string lexicographically.
+
+
+def sort_string_lexicographically(string):
+    sorted_string = ''.join(sorted(string))
+    return sorted_string
+
+
+print(sort_string_lexicographically("python"))
+
+
+============================================================================================================================================================================================
